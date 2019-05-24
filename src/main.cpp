@@ -4,8 +4,10 @@
 
 
 int main() {
-    PlayState play_state;
+    PlayState* play_state;
+    play_state = new PlayState();
 
-    play_state.render();
+
+    play_state->render();
     return 0;
 }

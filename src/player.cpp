@@ -25,10 +25,10 @@ void Player::add_valid_move(int x, int y) {
 
 bool Player::is_in_valid_moves(int x, int y) {
     std::pair<int, int> pair = std::make_pair(x, y);
-    for (int i = 0; i < valid_moves.size(); i++) {
-        if (valid_moves[i] == pair)
+    for (auto move : valid_moves) {
+        if (move == pair)
             return true;
     }
-    
+
     return false;
 }

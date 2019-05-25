@@ -7,7 +7,6 @@ int main() {
     PlayState* play_state;
     play_state = new PlayState();
 
-
-    play_state->render();
+    play_state->run();
     return 0;
 }

@@ -14,7 +14,7 @@ class Player {
         void clear_valid_moves();
         void add_valid_move(int x, int y);
         bool is_in_valid_moves(int x, int y);
-        
+
     private:
         std::vector<std::pair<int, int>> valid_moves;
         char representation;

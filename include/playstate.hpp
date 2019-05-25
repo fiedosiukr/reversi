@@ -21,6 +21,7 @@ class PlayState {
 
         bool is_valid_move(int x, int y);
         bool is_on_board(int x, int y);
+        void calculate_valid_moves(Player* player);
 
 };
 

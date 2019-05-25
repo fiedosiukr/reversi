@@ -6,7 +6,7 @@
 
 static const int SIZE = 8;
 
-std::vector<std::pair<int, int>> DIRECTIONS = 
+static const std::vector<std::pair<int, int>> DIRECTIONS = 
     {{-1, -1}, {0, -1}, {1, -1}, {-1, 0},
     {1, 0}, {1, -1}, {1, 0}, {1, 1}};
 

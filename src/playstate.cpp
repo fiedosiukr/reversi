@@ -17,6 +17,8 @@ PlayState::PlayState() {
     pieces[4 * SIZE + 4] = new Piece(white_player->get_representation());
     pieces[3 * SIZE + 4] = new Piece(black_player->get_representation());
     pieces[4 * SIZE + 3] = new Piece(black_player->get_representation());
+
+    calculate_valid_moves(active_player);
 }
 
 void PlayState::render() {
@@ -35,6 +37,9 @@ void PlayState::render() {
 }
 
 bool PlayState::is_valid_move(int x, int y) {
+    if (!is_on_board(x, y))
+        return false;
+
     int currentX, currentY;
     bool piece_between;
     for (int i = 0; i < DIRECTIONS.size(); i++) {
@@ -62,5 +67,17 @@ bool PlayState::is_valid_move(int x, int y) {
 
 bool PlayState::is_on_board(int x, int y) {
     return (x >= 0 && x < SIZE && y >= 0 && y < SIZE);
+}
+
+void PlayState::calculate_valid_moves(Player*  player) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            if (pieces[j * SIZE + i] != nullptr)
+                continue;
+            
+            if (is_valid_move(i, j))
+                player->add_valid_move(i, j);
+        }
+    }
 }
 

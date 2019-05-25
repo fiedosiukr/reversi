@@ -19,10 +19,11 @@ class PlayState {
         Player* black_player;
         Player* active_player;
 
+        bool add_piece(int x, int y);
+        void change_pieces(int x, int y);
         bool is_valid_move(int x, int y);
         bool is_on_board(int x, int y);
         void calculate_valid_moves(Player* player);
-
 };
 
 #endif

@@ -4,9 +4,8 @@
 
 
 int main() {
-    PlayState* play_state;
-    play_state = new PlayState();
+    PlayState play_state;
 
-    play_state->run();
+    play_state.run();
     return 0;
 }
